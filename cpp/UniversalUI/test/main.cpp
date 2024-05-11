@@ -44,9 +44,14 @@ class MyWindow: public UWindow<MyWindow> {
 
         }
         
+        for (int x = 0; x < 50; x++) {
+            for (int y = 0; y < 50; y++) {
+                GRect drawRect = { (float)mouseX + 10.0*x , (float)mouseY + 10.0*y, 10.0, 10.0};
+                GFrame_Composite(surface, drawRect, myFrame);
+            }
+            
+        }
         
-        GRect drawRect = { (float)mouseX, (float)mouseY, 10.0, 10.0};
-        GFrame_Composite(surface, drawRect, myFrame);
     
 
     }
