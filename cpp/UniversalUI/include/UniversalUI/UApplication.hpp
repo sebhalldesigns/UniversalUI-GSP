@@ -3,10 +3,12 @@
 
 
 // UniversalUI UApplication class
-// This is the entrypoint into UniversalUI
+// This is the entrypoint into UniversalUI library.
 //
-// UniversalUI classes in C++ use CRTP
+// UniversalUI classes in C++ use CRTP, so are required
+// to be header only without adding further classes. 
 
+#include <cstdio>
 #include <string>
 
 extern "C" {
@@ -27,7 +29,8 @@ public:
     int MinorVersion;
 
     UApplication() {
-
+        
+        // set up info
         Title = "Application";
         Developer = "Developer";
         MajorVersion = 0;
@@ -40,6 +43,7 @@ public:
             MinorVersion
         };
 
+        // allocate application
         GApplicationHandle = GApplication_Init(appInfo);
         GApplication_SetUserData(GApplicationHandle, this);
 
@@ -65,6 +69,7 @@ public:
 
         GApplication_SetLaunchEvent(GApplicationHandle, launchEvent);
     }
+
 
     int Run() {
         return GSPRun(GApplicationHandle);
