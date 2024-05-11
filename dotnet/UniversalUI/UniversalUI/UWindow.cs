@@ -19,8 +19,17 @@ public class UWindow {
             title = Title
         };
 
-        GWindowHandle = GSPCore.GWindow.GWindow_Init(windowInfo);
+        GWindowHandle = GSPCore.GWindow_Init(windowInfo);
+        GSPCore.GWindow_SetResizeDelegate(GWindowHandle, ResizeDelegate);
+    }
 
+    // DELEGATE FORWARDING
+    private void ResizeDelegate(IntPtr window, GSPCore.GWindowSize size) {
+        WindowResized(size);
+    }
+
+
+    public virtual void WindowResized(GSPCore.GWindowSize size) {
     }
 
 

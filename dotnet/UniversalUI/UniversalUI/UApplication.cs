@@ -23,15 +23,15 @@ public class UApplication {
             minorVersion = MinorVersion
         };
 
-        GApplicationHandle = GSPCore.GApplication.GApplication_Init(appInfo);
-        GSPCore.GApplication.GApplication_SetLaunchEvent(GApplicationHandle, this.LaunchEvent);
+        GApplicationHandle = GSPCore.GApplication_Init(appInfo);
+        GSPCore.GApplication_SetLaunchEvent(GApplicationHandle, this.LaunchEvent);
 
     }
 
 
     public int Run() {
 
-        return GSPCore.GSPCore.GSPRun(GApplicationHandle);
+        return GSPCore.GSPRun(GApplicationHandle);
     }
 
 

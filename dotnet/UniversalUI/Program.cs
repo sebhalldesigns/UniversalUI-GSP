@@ -17,7 +17,7 @@ class Program {
     // Main Method 
     public static void Main(String[] args) { 
   
-        GSPCore.GLog.Log(GSPCore.GLogLevel.INFO, "SOME INFO FROM CSHARP");
+        UniversalUI.GSPCore.GLog(UniversalUI.GSPCore.GLogLevel.INFO, "SOME INFO FROM CSHARP");
 
         ExampleApp app = new ExampleApp();
 
