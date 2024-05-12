@@ -13,5 +13,5 @@ set(UNIVERSALUI_TEST_SRC
 
 add_executable(UniversalUITest ${UNIVERSALUI_TEST_SRC})
 target_include_directories(UniversalUITest PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include ${GSPCORE_INCLUDE})
-target_link_libraries(UniversalUITest ${GSPCORE_LIB})
+target_link_libraries(UniversalUITest ${GSPCORE_LIB} vulkan)
 
